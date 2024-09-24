@@ -1,50 +1,44 @@
-# React + TypeScript + Vite
+# Kueh a React + TypeScript + Vite Demo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Hosted
 
-Currently, two official plugins are available:
+The app is hosted on [https://kueh.onrender.com](https://kueh.onrender.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Note: The web app is calling a backend web service providing the graphql endpoint. This is hosted on Render.com free tier. It will sleep when there are 15 minutes of not activity. The app will take around 60 seconds to wake up. Initial load for the app might be a bit slow.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Before setting up the app locally, ensure that you have the following installed:
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js
+- NPM
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+npm install -g pnpm
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+To install `pnpm` if you don’t have pnpm installed.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Local Development
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+1. Clone the repository
+   First, clone the repository to your local machine:
+
+```
+git clone https://github.com/jibone/graph_menu.git
+cd graph_menu
+```
+
+2. Install Dependencies
+   Run the following commands to install the required dependencies
+
+```
+pnpm install
+```
+
+3. Run the dev server
+   This will run the local server on http://localhost:5173
+
+```
+pnpm run dev
 ```
