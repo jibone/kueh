@@ -1,4 +1,4 @@
-import { useState } from "React";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import type { Product } from "./ProductCard";
 
